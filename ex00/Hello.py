@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-
-import sys
-sys.stdout.reconfigure(encoding='utf-8')
-
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
