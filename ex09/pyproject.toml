@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package" 
+version = "0.0.1"  
+description = "A simple test package" 
+authors = [
+    { name = "Gabriel Smereka" }
+]
+license = { text = "MIT" }  
+readme = "README.md" 
+keywords = ["ft_package", "python"] 
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []  
+requires-python = ">=3.10"  
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ft_package"] 

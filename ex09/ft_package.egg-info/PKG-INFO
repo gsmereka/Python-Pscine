@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: ft_package
+Version: 0.0.1
+Summary: A simple test package
+Author: Gabriel Smereka
+License: MIT
+Keywords: ft_package,python
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Ft package
+
+This is my custom ft Python package.
+
+## Installation
+
+```bash
+pip install ft_package
