@@ -17,7 +17,7 @@ def NULL_not_found(object: any) -> int:
                 name = "Empty"
             
             print(f"{name} : {object} {type(object)}")
-            return 1  
+            return 1
 
     print("Type not Found")
     return 1  
