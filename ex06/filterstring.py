@@ -1,30 +1,30 @@
 from ft_filter import ft_filter
 import sys
 
-def main():
-    # Validate that there are exactly two arguments
-    if len(sys.argv) != 3:
-        print("AssertionError: the arguments are bad")
-        return
 
-    # Validate that the first argument is a string and the second is an integer
+def main():
+    """Main function to filter words from a string by their length."""
+    try:
+        assert len(sys.argv) == 3, "AssertionError: bad arguments"
+    except AssertionError as e:
+        print(f"Assertion Error: {e}")
+        sys.exit()
+
     S = sys.argv[1]
     try:
         N = int(sys.argv[2])
     except ValueError:
-        print("AssertionError: the arguments are bad")
+        print("AssertionError: the second argument must be an integer")
         return
 
-    if not isinstance(S, str) or not isinstance(N, int):
-        print("AssertionError: the arguments are bad")
+    try:
+        result = list(ft_filter(lambda word: len(word) > N, S.split()))
+    except Exception as e:
+        print(f"Error while filtering: {e}")
         return
-
-    # List comprehension with lambda to filter words by length
-    result = ft_filter(lambda word: len(word) > N, S.split())
-    # result = ft_filter(len, S.split())
-    # result = [word for word in S.split() if len(word) > N]
 
     print(result)
+
 
 if __name__ == "__main__":
     main()
