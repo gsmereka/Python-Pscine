@@ -1,5 +1,6 @@
 from sys import argv
 
+
 def main():
     try:
         if len(argv) != 2:
@@ -21,6 +22,7 @@ def main():
     except ValueError:
         print("AssertionError: argument is not an integer")
         return
+
 
 if __name__ == "__main__":
     main()
