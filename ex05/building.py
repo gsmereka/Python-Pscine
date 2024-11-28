@@ -1,44 +1,53 @@
 import sys
 import string
 
-def analyze_text(text):
-    upper_count = 0
-    lower_count = 0
-    digit_count = 0
-    space_count = 0
-    punctuation_count = 0
 
-    if not isinstance(text, str):
-        printf("TEXT")
+def analyze_text(text):
+    """Analyze the text and count different types of characters."""
+    counts = {
+        "uppercase": 0,
+        "lowercase": 0,
+        "digits": 0,
+        "spaces": 0,
+        "punctuation": 0
+    }
+
     for char in text:
         if char.isupper():
-            upper_count += 1
+            counts["uppercase"] += 1
         elif char.islower():
-            lower_count += 1
+            counts["lowercase"] += 1
         elif char.isdigit():
-            digit_count += 1
+            counts["digits"] += 1
         elif char.isspace():
-            space_count += 1
+            counts["spaces"] += 1
         elif char in string.punctuation:
-            punctuation_count += 1
+            counts["punctuation"] += 1
 
-    print(f"O texto contém {len(text)} caracteres:")
-    print(f"- {upper_count} letras maiúsculas")
-    print(f"- {lower_count} letras minúsculas")
-    print(f"- {punctuation_count} caracteres de pontuação")
-    print(f"- {space_count} espaços")
-    print(f"- {digit_count} dígitos")
+    print(f"The text contains {len(text)} characters:")
+    print(f"{counts['uppercase']} uppercase letters")
+    print(f"{counts['lowercase']} lowercase letters")
+    print(f"{counts['punctuation']} punctuation marks")
+    print(f"{counts['spaces']} spaces")
+    print(f"{counts['digits']} digits")
+
 
 def main():
-    if len(sys.argv) > 2:
-        print("Erro: Apenas um argumento é permitido.")
-        return
-    elif len(sys.argv) == 2:
-        text = sys.argv[1]
+    """Main function to process input and analyze the text."""
+    try:
+        assert len(sys.argv) <= 2, "Too many arguments provided"
+    except AssertionError as e:
+        print(f"Assertion Error: {e}")
+        sys.exit()
+
+    if len(sys.argv) == 1:
+        text = input("Enter the text to analyze:\n")
+        text += '\n'
     else:
-        text = input("Digite o texto a ser analisado:\n")
+        text = sys.argv[1]
 
     analyze_text(text)
+
 
 if __name__ == "__main__":
     main()
