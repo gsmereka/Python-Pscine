@@ -26,21 +26,22 @@ def display_image_with_zoom(image):
         center_y = int(image.shape[0] / 2)
         zoom_size = 200
 
-        zoomed_image = image[(center_y - zoom_size):(center_y + zoom_size),
-                             (center_x - zoom_size):(center_x + zoom_size)]
+        zoomed_img = image[
+            (center_y - zoom_size):(center_y + zoom_size),
+            (center_x - zoom_size):(center_x + zoom_size)
+        ]
 
-        if zoomed_image.shape[-1] != 3:
+        if zoomed_img.shape[-1] != 3:
             raise ValueError("The image needs to be a 3-channel image.")
 
-        zoomed_image = np.mean(zoomed_image, axis=-1, keepdims=True)
+        zoomed_img = np.mean(zoomed_img, axis=-1, keepdims=True).astype(int)
 
-        print(f"New shape after slicing: {zoomed_image.shape}")
-        print(f"{zoomed_image}")
+        print(f"New shape after slicing: {zoomed_img.shape}")
+        print(f"{zoomed_img}")
 
         fig, ax = plt.subplots()
-        ax.imshow(zoomed_image, cmap='gray')
+        ax.imshow(zoomed_img, cmap='gray')
         plt.savefig("output.png")
-        print("Zoomed image saved as 'output.png'.")
     except Exception as e:
         print(f"Error processing the image: {e}")
 

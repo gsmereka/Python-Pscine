@@ -2,6 +2,21 @@ import numpy as np
 
 
 def slice_me(family: list, start: int, end: int) -> list:
+    """
+    Slices a 2D list by row indices and returns the result.
+
+    Args:
+        family (list): A 2D list where all rows must have the same size.
+        start (int): The starting index for slicing (inclusive).
+        end (int): The ending index for slicing (exclusive).
+
+    Returns:
+        list: A sliced portion of the 2D list.
+
+    Raises:
+        TypeError: If the input is not a 2D list.
+        ValueError: If rows in the input do not have the same size.
+    """
     if not isinstance(family, list):
         raise TypeError("The input must be a list.")
     for row in family:

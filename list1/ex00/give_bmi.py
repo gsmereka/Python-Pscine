@@ -1,7 +1,7 @@
 from typing import List, Union
 
 
-def give_bmi(height: List[Union[int, float]], 
+def give_bmi(height: List[Union[int, float]],
              weight: List[Union[int, float]]) -> List[Union[int, float]]:
     """
     Calculate BMI for each individual as weight / (height ** 2).
@@ -49,7 +49,8 @@ def apply_limit(bmi: List[Union[int, float]], limit: int) -> List[bool]:
         List[bool]: Boolean list indicating if BMI exceeds the limit.
 
     Raises:
-        TypeError: If BMI contains non-numeric values or limit is not an integer.
+        TypeError: If BMI contains non-numeric values\
+         or limit is not an integer.
     """
     for b in bmi:
         if not isinstance(b, (int, float)):
