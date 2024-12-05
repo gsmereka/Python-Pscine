@@ -24,7 +24,7 @@ def ft_load(path: str) -> np.ndarray:
         img_array = asarray(img)
 
         print(f"The shape of image is: {img_array.shape}")
-
+        print(img_array)
         return img_array
 
     except FileNotFoundError:

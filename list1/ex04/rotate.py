@@ -50,6 +50,10 @@ def transpose_image(image):
 
 
 def main():
+    """
+    Main function to load an image and display\
+     a transposed and zoomed-in section of it.
+    """
     img = load_image("animal.jpeg")
     zoom_size = 400
     square_img = zoom_image(img, zoom_size)
