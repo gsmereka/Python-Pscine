@@ -34,7 +34,8 @@ def display_image_with_zoom(image):
         if zoomed_img.shape[-1] != 3:
             raise ValueError("The image needs to be a 3-channel image.")
 
-        zoomed_img = np.mean(zoomed_img, axis=-1, keepdims=True).astype(np.uint8)
+        zoomed_img = np.mean(
+            zoomed_img, axis=-1, keepdims=True).astype(np.uint8)
 
         print(f"New shape after slicing: {zoomed_img.shape}")
         print(f"{zoomed_img}")

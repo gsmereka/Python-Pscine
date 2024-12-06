@@ -31,6 +31,7 @@ def ft_red(array: np.ndarray) -> np.ndarray:
     save_image(red, "red.png")
     return red
 
+
 def ft_green(array: np.ndarray) -> np.ndarray:
     """
     Filter only the green channel, setting other channels to zero.
@@ -56,12 +57,13 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 def ft_grey(array: np.ndarray) -> np.ndarray:
     """
     Convert the image to grayscale by averaging the channels.
-    The result will have the same value for each channel [b, b, b] for each pixel.
+    The result will have the same value for\
+     each channel [b, b, b] for each pixel.
     """
     grey = array.copy()
-    grey[:,:,0] = grey[:,:,2]
-    grey[:,:,1] = grey[:,:,2]
+    grey[:, :, 0] = grey[:, :, 2]
+    grey[:, :, 1] = grey[:, :, 2]
 
     save_image(grey, "grey.png")
-    
+
     return grey
