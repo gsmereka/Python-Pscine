@@ -24,7 +24,7 @@ def zoom_image(image, zoom_size):
         ]
         if zoomed_img.shape[-1] != 3:
             raise ValueError("The image needs to be a 3-channel image.")
-        zoomed_img = np.mean(zoomed_img, axis=-1, keepdims=True).astype(int)
+        zoomed_img = np.mean(zoomed_img, axis=-1, keepdims=True).astype(np.uint8)
         return zoomed_img
     except Exception as e:
         print(f"Error processing the image: {e}")
@@ -37,11 +37,9 @@ def transpose_image(image):
     If the image has a single channel, the third dimension is removed
     before transposing.
     """
-    if image.ndim == 3:
-        rows, cols, extra = image.shape
-    if image.ndim == 2:
-        rows, cols = image.shape
-    transposed_image = np.zeros((cols, rows), dtype=image.dtype)
+
+    rows, cols, extra = image.shape
+    transposed_image = np.zeros((cols, rows))
 
     for i in range(rows):
         for j in range(cols):
